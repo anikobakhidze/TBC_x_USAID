@@ -1,0 +1,95 @@
+/* header */
+.header-container {
+  position: fixed;
+  top: 0;
+  height: 5.25rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-gray-bg);
+  transition: background-color 0.3s ease;
+}
+.header-wrapper {
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.header-logo-wrapper {
+  width: 11.4rem;
+}
+.header-logo-wrapper img {
+  width: 100%;
+}
+.nav-wrapper {
+  width: 440px;
+  justify-content: space-around;
+}
+.nav-wrapper li {
+  color: var(--light-gray-txt);
+}
+.active,
+.nav-wrapper li:not(:nth-child(3)) a:hover {
+  color: rgb(0, 163, 224);
+}
+
+/* intro section */
+.intro-section-container {
+  background: url("../images/intro_wallpaper.jpg") center/cover no-repeat;
+  min-height: 352px;
+  justify-content: center;
+}
+.intro-heading-wrapper {
+  color: var(--light-gray-txt);
+  margin-top: 6.8rem;
+}
+.intro-heading-wrapper h2 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.09rem;
+  margin-bottom: 2rem;
+}
+.intro-heading-wrapper h3 {
+  font-size: 34px;
+  font-weight: 800;
+}
+
+/* about section */
+.about-container {
+  background-color: var(--medium-gray-bg);
+}
+.about-wrapper {
+  margin: 0 auto;
+  padding: 55px 0;
+}
+.about-wrapper h1 {
+  font-size: 28px;
+  line-height: 1.6em;
+  letter-spacing: normal;
+  color: var(--light-gray-txt);
+  margin-bottom: 2.7rem;
+}
+
+.additional-info-btn {
+  color: var(--blue-color-btn);
+  font-size: 20px;
+  line-height: 1.4em;
+  white-space: nowrap;
+  font-weight: 700;
+  transition: color 0.4s ease 0s;
+}
+.additional-info-btn:hover {
+  color: var(--medium-gray-btn);
+}
+/* courses section  */
+.courses-container {
+  background-color: var(--black-bg);
+}
+.courses-wrapper {
+  margin: 0 auto;
+  flex-direction: column;
+}
+.courses-wrapper h4 {
+  margin: 34px 0px 67px 0px;
+  font-size: 24px;
+  color: #dbdbdb;
+}

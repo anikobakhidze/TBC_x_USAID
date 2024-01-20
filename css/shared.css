@@ -1,0 +1,45 @@
+body {
+  padding-top: 5.25rem;
+}
+:root {
+  --dark-gray-bg: rgba(26, 30, 31);
+  --bg-scrl: rgb(34, 34, 34);
+  --light-gray-txt: rgb(244, 244, 244);
+  --medium-gray-bg: rgb(43, 43, 43);
+  --medium-gray-btn: rgb(170, 170, 170);
+  --blue-color-btn: rgb(0, 174, 243);
+  --black-bg: rgb(22, 22, 22);
+  --courses-h-color: #dbdbdb;
+  --card-h-color: rgb(244, 244, 244);
+  --card-p-color: rgb(244, 244, 244);
+  --card-btn-color: rgb(0, 174, 239);
+  --card-btn-hover-color: rgb(0, 128, 176);
+  --partners-bg-color: rgb(43, 43, 43);
+  --partners-h-color: rgb(244, 244, 244);
+  --partners-dotsColor: 232, 230, 230;
+  --partners-dotsSelectedColor: 255, 255, 255;
+  --partners-arrowColor: 232, 230, 230;
+  --question-bg-color: rgb(22, 22, 22);
+  --question-heading-color: rgb(244, 244, 244);
+  --qusetions-textg-color: rgb(244, 244, 244);
+  --questions-paragraph-color: rgb(244, 244, 244);
+  --Qbtn-medium-gray: rgb(170, 170, 170);
+  --Qbtn-blue-color: rgb(0, 174, 243);
+  --footer-bg-color: rgb(26, 30, 31);
+  --footer-text-color: rgb(244, 244, 244);
+  --footer-terms-color: rgb(255, 255, 255);
+  --footer-terms-hover-color: rgb(170, 170, 170);
+  --footer-btn-hover-bg-color: rgb(213, 213, 213);
+  --footer-btn-color: rgb(255, 255, 255);
+  --footer-btn-bg-color: rgb(0, 174, 243);
+  --footer-btn-bg-color-hover: rgb(43, 43, 43);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.width {
+  max-width: 980px;
+  width: 100%;
+}
