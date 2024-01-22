@@ -2,8 +2,8 @@ body {
   padding-top: 5.25rem;
 }
 :root {
+  overflow: scroll;
   --dark-gray-bg: rgba(26, 30, 31);
-  --bg-scrl: rgb(34, 34, 34);
   --light-gray-txt: rgb(244, 244, 244);
   --medium-gray-bg: rgb(43, 43, 43);
   --medium-gray-btn: rgb(170, 170, 170);
@@ -11,11 +11,6 @@ body {
   --black-bg: rgb(22, 22, 22);
   --gray-slider-color: rgb(232, 230, 230);
   --white-btn: rgb(255, 255, 255);
-  --footer-terms-hover-color: rgb(170, 170, 170);
-  --footer-btn-hover-bg-color: rgb(213, 213, 213);
-  --footer-btn-color: rgb(255, 255, 255);
-  --footer-btn-bg-color: rgb(0, 174, 243);
-  --footer-btn-bg-color-hover: rgb(43, 43, 43);
 }
 
 .d-flex {
@@ -28,10 +23,10 @@ body {
 }
 .hidden {
   display: none;
+  /* opacity: 0;
+  transition: opacity 15000ms cubic-bezier(0.37, 0, 0.63, 1); */
 }
-.show {
-  display: inline-block;
-}
+
 /* about and questions section */
 .additional-info-btn {
   color: var(--blue-color);
