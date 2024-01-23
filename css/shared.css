@@ -1,6 +1,7 @@
 body {
   padding-top: 5.25rem;
 }
+
 :root {
   overflow: scroll;
   --dark-gray-bg: rgba(26, 30, 31);
@@ -11,6 +12,10 @@ body {
   --black-bg: rgb(22, 22, 22);
   --gray-slider-color: rgb(232, 230, 230);
   --white-btn: rgb(255, 255, 255);
+  --font-light: 'TBC Contractica Light', Arial, Helvetica, sans-serif;
+  --font-black: 'TBC Contractica Black', Arial, Helvetica, sans-serif;
+  --font-regular: 'TBC Regular', sans-serif;
+
 }
 
 .d-flex {
@@ -21,10 +26,9 @@ body {
   max-width: 980px;
   width: 100%;
 }
+
 .hidden {
   display: none;
-  /* opacity: 0;
-  transition: opacity 15000ms cubic-bezier(0.37, 0, 0.63, 1); */
 }
 
 /* about and questions section */
@@ -33,15 +37,17 @@ body {
   font-size: 20px;
   line-height: 1.4em;
   white-space: nowrap;
-  font-weight: 700;
+  /* font-weight: 700; */
+  font: 20px/1.4em 'TBC Contractica Bold', Arial, Helvetica, sans-serif;
   transition: color 0.4s ease 0s;
 }
+
 .additional-info-btn:hover {
   color: var(--medium-gray-btn);
 }
+
 /* partners and questions section */
 .section-heading {
-  font-size: 24px;
-  line-height: 1.6em;
-  color: var(--light-gray-txt);
+  font: 24px/1.6em var(--font-regular);
+  color: #dbdbdb;
 }

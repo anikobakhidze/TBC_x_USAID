@@ -13,6 +13,7 @@ const leftArrow = document.getElementById("leftArrow");
 const partnersLists = document.querySelectorAll(".partners-list-wrapper");
 const dotSlider = document.querySelectorAll(".dot");
 let currentIndex = 0;
+
 const showCurrentList = () => {
   partnersLists.forEach((el, index) => {
     if (index === currentIndex) {
@@ -52,28 +53,28 @@ const handleRightArrow = () => {
   showCurrentList();
 };
 rightArrow.addEventListener("click", handleRightArrow);
-
-// leftArrow
-const handleLeftArrow = () => {
-  clearInterval(intervalId);
-  currentIndex =
-    (currentIndex - 1 + partnersLists.length) % partnersLists.length;
-  showCurrentList();
-};
-leftArrow.addEventListener("click", handleLeftArrow);
 // automatic scroll
-// const intervalId = setInterval(handleRightArrow, 2000);
+let intervalId = setInterval(handleRightArrow, 5000);
 rightArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
 rightArrow.addEventListener(
   "mouseleave",
-  () => (intervalId = setInterval(handleRightArrow, 2000))
+  () => (intervalId = setInterval(handleRightArrow, 5000))
 );
 
 leftArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
 leftArrow.addEventListener(
   "mouseleave",
-  () => (intervalId = setInterval(handleRightArrow, 2000))
+  () => (intervalId = setInterval(handleRightArrow, 5000))
 );
+
+// leftArrow
+const handleLeftArrow = () => {
+  // clearInterval(intervalId);
+  currentIndex =
+    (currentIndex - 1 + partnersLists.length) % partnersLists.length;
+  showCurrentList();
+};
+leftArrow.addEventListener("click", handleLeftArrow);
 
 // Accordion card
 
