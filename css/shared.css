@@ -12,10 +12,10 @@ body {
   --black-bg: rgb(22, 22, 22);
   --gray-slider-color: rgb(232, 230, 230);
   --white-btn: rgb(255, 255, 255);
-  --font-light: 'TBC Contractica Light', Arial, Helvetica, sans-serif;
-  --font-black: 'TBC Contractica Black', Arial, Helvetica, sans-serif;
-  --font-regular: 'TBC Regular', sans-serif;
-
+  --font-light: "TBC Contractica Light", Arial, Helvetica, sans-serif;
+  --font-black: "TBC Contractica Black", Arial, Helvetica, sans-serif;
+  --font-bold: "TBC Contractica Bold", Arial, Helvetica, sans-serif;
+  --font-regular: "TBC Regular", Arial, Helvetica, sans-serif;
 }
 
 .d-flex {
@@ -37,8 +37,7 @@ body {
   font-size: 20px;
   line-height: 1.4em;
   white-space: nowrap;
-  /* font-weight: 700; */
-  font: 20px/1.4em 'TBC Contractica Bold', Arial, Helvetica, sans-serif;
+  font: 20px/1.4em var(--font-bold);
   transition: color 0.4s ease 0s;
 }
 
