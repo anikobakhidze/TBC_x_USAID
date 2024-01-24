@@ -54,27 +54,27 @@ const handleRightArrow = () => {
 };
 rightArrow.addEventListener("click", handleRightArrow);
 // automatic scroll
-// let intervalId = setInterval(handleRightArrow, 5000);
-// rightArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
-// rightArrow.addEventListener(
-//   "mouseleave",
-//   () => (intervalId = setInterval(handleRightArrow, 5000))
-// );
+let intervalId = setInterval(handleRightArrow, 5000);
+rightArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
+rightArrow.addEventListener(
+  "mouseleave",
+  () => (intervalId = setInterval(handleRightArrow, 5000))
+);
 
-// leftArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
-// leftArrow.addEventListener(
-//   "mouseleave",
-//   () => (intervalId = setInterval(handleRightArrow, 5000))
-// );
+leftArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
+leftArrow.addEventListener(
+  "mouseleave",
+  () => (intervalId = setInterval(handleRightArrow, 5000))
+);
 
-// // leftArrow
-// const handleLeftArrow = () => {
-//   // clearInterval(intervalId);
-//   currentIndex =
-//     (currentIndex - 1 + partnersLists.length) % partnersLists.length;
-//   showCurrentList();
-// };
-// leftArrow.addEventListener("click", handleLeftArrow);
+// leftArrow
+const handleLeftArrow = () => {
+  // clearInterval(intervalId);
+  currentIndex =
+    (currentIndex - 1 + partnersLists.length) % partnersLists.length;
+  showCurrentList();
+};
+leftArrow.addEventListener("click", handleLeftArrow);
 
 // Accordion card
 
