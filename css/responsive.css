@@ -1,4 +1,4 @@
-@media screen and (max-width:1050px) {
+@media screen and (max-width: 1050px) {
   .width {
     max-width: 80%;
   }
@@ -17,7 +17,7 @@
     max-width: 330px;
   }
 
-  .card-wrapper>div>div {
+  .card-wrapper > div > div {
     margin-top: 3rem;
   }
 
@@ -29,13 +29,51 @@
   .partners-arrow-wrapper {
     display: none;
   }
-}
-
-@media screen and (max-width:850px) {
-  .width {
-    max-width: 700px;
+  /* partners section */
+  .partners-section-container {
+    padding-bottom: 4rem;
   }
 
+  .partners-list-wrapper {
+    flex-direction: column;
+    height: 260px;
+    row-gap: 30px;
+  }
+
+  .partners-slider-wrapper {
+    margin-top: 40px;
+  }
+  /* accordion section */
+  .accordion-div-wrapper {
+    margin: 0 auto;
+  }
+
+  .accordion-div-wrapper h4 {
+    grid-area: 1 / span 2;
+  }
+
+  .accordion-title-wrapper {
+    grid-area: 1;
+  }
+
+  .accordion-div-wrapper > span {
+    grid-area: 3/1;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* shared */
+  .width {
+    max-width: 80%;
+  }
+  .section-heading,
+  .accordion-div-wrapper h4 {
+    font-size: 20px;
+  }
+  .additional-info-btn {
+    font-size: 18px;
+  }
   /* header */
   .header-wrapper nav {
     display: none;
@@ -51,67 +89,145 @@
   }
 
   .intro-heading-wrapper h3 {
-    font-size: 30px
+    font-size: 30px;
   }
 
   /* about section */
   .about-wrapper h1 {
     font-size: 23px;
+    margin-bottom: 1.7rem;
   }
 
   /* courses section */
   .card-wrapper {
     max-width: 300px;
   }
-
+  .courses-inner-wrapper h4 {
+    margin-bottom: 2rem;
+  }
   /* partners section */
   .partners-section-container {
-    padding-bottom: 4rem
+    padding-bottom: 2rem;
   }
-
-  .partners-list-wrapper {
-    flex-direction: column;
-    height: 260px;
-    row-gap: 30px;
-
+  .partners-section-container h4 {
+    margin-bottom: 0px;
   }
-
-  .partners-slider-wrapper {
-    margin-top: 40px;
-  }
-
   /* accordion section */
-  .accordion-div-wrapper {
-    margin: 0 auto;
+  .accordion-section-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
-
-  .accordion-div-wrapper h4 {
-    grid-area: 1/span 2;
+  .accordion-cards-container li {
+    padding: 1.3rem 0;
   }
-
-  .accordion-title-wrapper {
-    grid-area: 1;
+  .accordion-cards-container li > div h3 {
+    font-size: 16px;
   }
-
-  .accordion-div-wrapper>span {
-    grid-area: 3/1;
-    text-align: start;
+  /* footer */
+  .footer-container {
+    padding: 2.5rem 0;
+  }
+  .footer-container button {
+    width: 140px;
+    height: 35px;
+    font-size: 14px;
   }
 }
 
-@media screen and (max-width:775px) {
-  /* .width {
-    width: 80%
-  } */
-
+@media screen and (max-width: 760px) {
+  body {
+    padding-top: 4rem;
+  }
+  /* header */
+  .header-container {
+    height: 4rem;
+  }
+  .header-logo-wrapper img {
+    width: 80%;
+  }
+  /* intro section */
+  .intro-heading-wrapper h2 {
+    font-size: 30px;
+  }
+  .intro-heading-wrapper h3 {
+    font-size: 27px;
+  }
   /* about section */
   .about-wrapper h1 {
+    font-size: 19px;
+  }
+  /* courses section */
+  .courses-section-container {
+    padding-top: 1.5rem;
+  }
+  .courses-cards-container {
+    justify-content: center;
+  }
+  .card-wrapper {
+    max-width: 80%;
+    min-width: 300px;
+  }
+  .card-wrapper > div h5 {
+    height: 30px;
+  }
+  .card-wrapper > div > div {
+    margin-top: 2rem;
+  }
+  /* footer section */
+  .footer-container {
+    grid-template-columns: auto;
+    row-gap: 10px;
+  }
+  .social-icons-wrapper {
+    grid-area: 2/2;
+    justify-content: flex-start;
+  }
+  .copyright {
+    grid-area: 4 / span 2;
+    margin: 0px;
+  }
+  .footer-container a:last-child {
+    grid-area: 2/1;
+    justify-self: flex-start;
+  }
+  .footer-container button {
+    width: 106px;
+    height: 34px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 530px) {
+  /* shared css */
+  .section-heading {
+    font-size: 18px;
+  }
+  /* intro section */
+  .intro-heading-wrapper h2 {
+    font-size: 23px;
+  }
+  .intro-heading-wrapper h3 {
     font-size: 20px;
   }
-
+  /* about section */
   .about-wrapper {
-
     padding: 30px 0;
   }
-
+  .about-wrapper h1,
+  .additional-info-btn {
+    font-size: 16px;
+  }
+  /* accordion */
+  div-wrapper h4 {
+    font-size: 17px;
+  }
+  .accordion-cards-container li > div h3 {
+    font-size: 14px;
+    padding: 1rem 0;
+  }
+  .accordion-answers-container h6 {
+    margin-bottom: 0.3rem;
+  }
+  .accordion-answers-container p {
+    font-size: 12px;
+  }
 }
