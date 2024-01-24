@@ -27,7 +27,7 @@ body {
   width: 100%;
 }
 
-.hidden {
+.d-none {
   display: none;
 }
 

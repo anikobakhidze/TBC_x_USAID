@@ -1,0 +1,117 @@
+@media screen and (max-width:1050px) {
+  .width {
+    max-width: 80%;
+  }
+
+  /* about section */
+  .about-wrapper h1 {
+    font-size: 26px;
+  }
+
+  /* courses section */
+  .courses-inner-wrapper {
+    width: 80%;
+  }
+
+  .card-wrapper {
+    max-width: 330px;
+  }
+
+  .card-wrapper>div>div {
+    margin-top: 3rem;
+  }
+
+  /* partners section */
+  .partners-slider-wrapper {
+    justify-content: center;
+  }
+
+  .partners-arrow-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width:850px) {
+  .width {
+    max-width: 700px;
+  }
+
+  /* header */
+  .header-wrapper nav {
+    display: none;
+  }
+
+  .burger-bar-wrapper {
+    display: flex;
+  }
+
+  /* intro section */
+  .intro-heading-wrapper h2 {
+    font-size: 36px;
+  }
+
+  .intro-heading-wrapper h3 {
+    font-size: 30px
+  }
+
+  /* about section */
+  .about-wrapper h1 {
+    font-size: 23px;
+  }
+
+  /* courses section */
+  .card-wrapper {
+    max-width: 300px;
+  }
+
+  /* partners section */
+  .partners-section-container {
+    padding-bottom: 4rem
+  }
+
+  .partners-list-wrapper {
+    flex-direction: column;
+    height: 260px;
+    row-gap: 30px;
+
+  }
+
+  .partners-slider-wrapper {
+    margin-top: 40px;
+  }
+
+  /* accordion section */
+  .accordion-div-wrapper {
+    margin: 0 auto;
+  }
+
+  .accordion-div-wrapper h4 {
+    grid-area: 1/span 2;
+  }
+
+  .accordion-title-wrapper {
+    grid-area: 1;
+  }
+
+  .accordion-div-wrapper>span {
+    grid-area: 3/1;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width:775px) {
+  /* .width {
+    width: 80%
+  } */
+
+  /* about section */
+  .about-wrapper h1 {
+    font-size: 20px;
+  }
+
+  .about-wrapper {
+
+    padding: 30px 0;
+  }
+
+}

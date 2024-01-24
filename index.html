@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
     <!-- header -->
@@ -27,6 +28,11 @@
             <li><a href="#">რისკები</a></li>
           </ul>
         </nav>
+        <div class="d-none burger-bar-wrapper">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </header>
     <main>
@@ -214,7 +220,7 @@
               height="45"
             />
           </div>
-          <div class="hidden d-flex width partners-list-wrapper">
+          <div class="d-none d-flex width partners-list-wrapper">
             <img
               class="tegeta"
               src="images/partners/tegeta.png"
@@ -236,7 +242,7 @@
               height="95"
             />
           </div>
-          <div class="hidden d-flex width partners-list-wrapper ufc-partner">
+          <div class="d-none d-flex width partners-list-wrapper ufc-partner">
             <img
               class="ufc"
               src="images/partners/UFC.png"
@@ -260,15 +266,11 @@
       <!-- accordion section -->
       <section class="accordion-section-container">
         <div class="accordion-div-wrapper width">
-          <div class="accordion-title-wrapper d-flex">
-            <h4>ხშირად დასმული კითხვები</h4>
-            <span class="additional-info-btn"
-              ><a href="#">ყველა კითხვა</a></span
-            >
-          </div>
+          <h4 class="accordion-title-wrapper">ხშირად დასმული კითხვები</h4>
+          <span class="additional-info-btn"><a href="#">ყველა კითხვა</a></span>
           <ul class="accordion-cards-container">
             <li class="accordion-card-li">
-              <div class="d-flex">
+              <div class="accordion-cards-container d-flex">
                 <h3>როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?</h3>
                 <div>
                   <img
@@ -277,14 +279,14 @@
                     alt="down arrow"
                   />
                   <img
-                    class="up-arrow hidden"
+                    class="up-arrow d-none"
                     src="images/arrows/up_arrow.svg"
                     alt="up arrow"
                   />
                 </div>
               </div>
               <div
-                class="accordion-answers-container hidden query-accordion-answer"
+                class="accordion-answers-container d-none query-accordion-answer"
               >
                 <h6>კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:</h6>
                 <p>
@@ -330,13 +332,13 @@
                     alt="down arrow"
                   />
                   <img
-                    class="up-arrow hidden"
+                    class="up-arrow d-none"
                     src="images/arrows/up_arrow.svg"
                     alt="up arrow"
                   />
                 </div>
               </div>
-              <p class="accordion-answer hidden query-accordion-answer">
+              <p class="accordion-answer d-none query-accordion-answer">
                 TBC X USAID ტექნოლოგიური განათლებისთვის პროგრამაში თითოეულ
                 კანდიდატს აქვს მხოლოდ ერთი კურსის გავლის შესაძლებლობა. გარდა
                 Information Security და Python კურსებისა, სადაც Basic დონის
@@ -353,13 +355,13 @@
                     alt="down arrow"
                   />
                   <img
-                    class="up-arrow hidden"
+                    class="up-arrow d-none"
                     src="images/arrows/up_arrow.svg"
                     alt="up arrow"
                   />
                 </div>
               </div>
-              <p class="accordion-answer hidden query-accordion-answer">
+              <p class="accordion-answer d-none query-accordion-answer">
                 პროგრამის ფარგლებში კურსებზე სწავლა სრულიად დაფინანსებულია
                 თიბისი ბანკისა და USAID-ის მიერ.
               </p>

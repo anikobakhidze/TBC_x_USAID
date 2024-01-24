@@ -44,6 +44,30 @@
   color: rgb(0, 163, 224);
 }
 
+.burger-bar-wrapper {
+  width: 30px;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 7px;
+}
+
+.burger-bar-wrapper>div:first-child,
+.burger-bar-wrapper>div:last-child,
+.burger-bar-wrapper>div:nth-child(2) {
+  width: 15px;
+  height: 3px;
+  border-radius: 4px;
+  background-color: #dbdbdb;
+}
+
+.burger-bar-wrapper>div:nth-child(2) {
+  width: 100%;
+}
+
+.burger-bar-wrapper>div:last-child {
+  align-self: flex-end;
+}
+
 /* intro section */
 .intro-section-container {
   background: url("../images/intro_wallpaper.jpg") center/cover no-repeat;
@@ -115,7 +139,7 @@
   color: var(--light-gray-txt);
 }
 
-.card-wrapper > img {
+.card-wrapper>img {
   width: 100%;
   height: 150px;
   object-fit: cover;
@@ -123,12 +147,12 @@
   border-top-right-radius: 5px;
 }
 
-.card-wrapper > div {
+.card-wrapper>div {
   margin-top: 34px;
   margin-left: 22px;
 }
 
-.card-wrapper > div h5 {
+.card-wrapper>div h5 {
   font: 18px/1.6em var(--font-regular);
   max-width: 211px;
   width: 100%;
@@ -136,26 +160,28 @@
   margin-bottom: 25px;
 }
 
-.card-wrapper > div p {
+.card-wrapper>div p {
   font: 14px/1.6em var(--font-regular);
 }
 
-.card-wrapper > div > div {
+.card-wrapper>div>div {
   margin-top: 5.3rem;
   margin-bottom: 2rem;
   align-items: center;
   color: rgb(0, 174, 239);
 }
 
-.card-wrapper > div > div > img {
+.card-wrapper>div>div>img {
   margin: 14px 10px 10px 0;
 }
-.card-wrapper > div > div > span a {
+
+.card-wrapper>div>div>span a {
   font: 16px/1.6em var(--font-regular);
   font-weight: 500;
   transition: color 0.4s ease;
 }
-.card-wrapper > div > div > span a:hover {
+
+.card-wrapper>div>div>span a:hover {
   color: rgb(0, 128, 176);
 }
 
@@ -185,15 +211,13 @@
 .partners-arrow-wrapper img {
   width: 18px;
   height: 39px;
-  filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%)
-    contrast(100%);
+  filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(100%);
   transition: filter 0.4s ease 0s;
 }
 
 .partners-arrow-wrapper:hover img {
   cursor: pointer;
-  filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%)
-    contrast(100%) brightness(80%);
+  filter: invert(89%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(103%) contrast(100%) brightness(80%);
 }
 
 .partners-list-wrapper {
@@ -253,6 +277,7 @@
 
 .slider-dots-container .dot-selected {
   background-color: var(--white-btn);
+
 }
 
 /* accordion section */
@@ -261,18 +286,32 @@
   padding: 4.68rem 0px 2rem calc((100% - 980px) * 0.5);
 }
 
+
 .accordion-div-wrapper {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
   padding: 1.87rem 2.5rem;
+  row-gap: 1.25rem;
 }
 
-.accordion-title-wrapper {
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-}
-
-.accordion-title-wrapper h4 {
+.accordion-div-wrapper h4 {
   font: 24px/1.2em var(--font-regular);
   color: var(--light-gray-txt);
+  grid-area: 1/1;
+
+}
+
+.accordion-cards-container {
+  grid-area: 2/1/2/3;
+}
+
+
+.accordion-div-wrapper>span {
+  grid-area: 1/2;
+  text-align: end;
+
 }
 
 .accordion-cards-container li {
@@ -281,12 +320,12 @@
   border-bottom: 0.5px solid rgba(245, 245, 245, 0.278);
 }
 
-.accordion-cards-container li > div {
+.accordion-cards-container li>div {
   justify-content: space-between;
   cursor: pointer;
 }
 
-.accordion-cards-container li > div h3 {
+.accordion-cards-container li>div h3 {
   font: 18px/1.2em var(--font-regular);
 }
 
@@ -297,11 +336,13 @@
 .accordion-answers-container p:not(:last-child) {
   margin-left: 1.5em;
 }
+
 .accordion-answers-container h6,
 .accordion-answers-container p,
 .accordion-answer {
-  font: 14px var(--font-regular);
+  font: 14px/1.6em var(--font-regular);
 }
+
 .accordion-answers-container p,
 .accordion-answer {
   padding-top: 2px;
@@ -316,7 +357,7 @@
 }
 
 .accordion-answers-container p span {
-  font-weight: 700;
+  font: 14px/1.6em var(--font-bold)
 }
 
 .accordion-info {
@@ -346,7 +387,7 @@ footer {
   height: 39px;
 }
 
-.social-icons-wrapper > a {
+.social-icons-wrapper>a {
   margin-right: 10px;
 }
 
@@ -370,10 +411,12 @@ footer {
 .terms:hover {
   color: var(--medium-gray-btn);
 }
+
 .footer-container a:last-child {
   grid-area: 3/2;
   justify-self: end;
 }
+
 .footer-container button {
   width: 162px;
   height: 39px;

@@ -17,12 +17,12 @@ let currentIndex = 0;
 const showCurrentList = () => {
   partnersLists.forEach((el, index) => {
     if (index === currentIndex) {
-      el.classList.remove("hidden");
+      el.classList.remove("d-none");
       if (dotSlider[index]) {
         dotSlider[index].classList.add("dot-selected");
       }
     } else {
-      el.classList.add("hidden");
+      el.classList.add("d-none");
       if (dotSlider[index]) {
         dotSlider[index].classList.remove("dot-selected");
       }
@@ -37,11 +37,11 @@ const handleDotSlider = (e) => {
   if (!currentDot) return;
   dotSlider.forEach((slider, index) => {
     if (slider === currentDot) {
-      if (partnersLists[index].classList.contains("hidden"))
-        partnersLists[index].classList.remove("hidden");
+      if (partnersLists[index].classList.contains("d-none"))
+        partnersLists[index].classList.remove("d-none");
       currentDot.classList.add("dot-selected");
     } else {
-      partnersLists[index].classList.add("hidden");
+      partnersLists[index].classList.add("d-none");
       slider.classList.remove("dot-selected");
     }
   });
@@ -54,27 +54,27 @@ const handleRightArrow = () => {
 };
 rightArrow.addEventListener("click", handleRightArrow);
 // automatic scroll
-let intervalId = setInterval(handleRightArrow, 5000);
-rightArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
-rightArrow.addEventListener(
-  "mouseleave",
-  () => (intervalId = setInterval(handleRightArrow, 5000))
-);
+// let intervalId = setInterval(handleRightArrow, 5000);
+// rightArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
+// rightArrow.addEventListener(
+//   "mouseleave",
+//   () => (intervalId = setInterval(handleRightArrow, 5000))
+// );
 
-leftArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
-leftArrow.addEventListener(
-  "mouseleave",
-  () => (intervalId = setInterval(handleRightArrow, 5000))
-);
+// leftArrow.addEventListener("mouseenter", () => clearInterval(intervalId));
+// leftArrow.addEventListener(
+//   "mouseleave",
+//   () => (intervalId = setInterval(handleRightArrow, 5000))
+// );
 
-// leftArrow
-const handleLeftArrow = () => {
-  // clearInterval(intervalId);
-  currentIndex =
-    (currentIndex - 1 + partnersLists.length) % partnersLists.length;
-  showCurrentList();
-};
-leftArrow.addEventListener("click", handleLeftArrow);
+// // leftArrow
+// const handleLeftArrow = () => {
+//   // clearInterval(intervalId);
+//   currentIndex =
+//     (currentIndex - 1 + partnersLists.length) % partnersLists.length;
+//   showCurrentList();
+// };
+// leftArrow.addEventListener("click", handleLeftArrow);
 
 // Accordion card
 
@@ -90,13 +90,13 @@ const handleClick = (e) => {
       ".query-accordion-answer"
     );
     if (accordionCard === closestAccordionCard) {
-      downArrow.classList.toggle("hidden");
-      upArrow.classList.toggle("hidden");
-      accordionAnswers.classList.toggle("hidden");
+      downArrow.classList.toggle("d-none");
+      upArrow.classList.toggle("d-none");
+      accordionAnswers.classList.toggle("d-none");
     } else {
-      downArrow.classList.remove("hidden");
-      upArrow.classList.add("hidden");
-      accordionAnswers.classList.add("hidden");
+      downArrow.classList.remove("d-none");
+      upArrow.classList.add("d-none");
+      accordionAnswers.classList.add("d-none");
     }
   });
 };
