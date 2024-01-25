@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,6 +13,7 @@
   </head>
   <body>
     <!-- header -->
+    <div class="d-none aside-overlay"></div>
     <header class="d-flex header-container">
       <div class="d-flex width header-wrapper">
         <div class="header-logo-wrapper">
@@ -20,19 +21,22 @@
             ><img src="./images/logoes/header_logo.svg" alt="TBC x Usaid logo"
           /></a>
         </div>
-        <nav>
-          <ul class="d-flex nav-wrapper">
+        <nav id="headerNavContainer">
+          <ul class="nav-wrapper d-flex">
             <li><a href="#">მთავარი</a></li>
             <li><a href="#">TBC IT</a></li>
             <li><a href="#" class="active">TBC x USAID</a></li>
             <li><a href="#">რისკები</a></li>
           </ul>
         </nav>
-        <div class="d-none burger-bar-wrapper">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+
+        <aside class="d-none aside">
+          <div class="burger-bar-wrapper">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </aside>
       </div>
     </header>
     <main>

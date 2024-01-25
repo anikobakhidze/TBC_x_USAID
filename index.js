@@ -102,3 +102,60 @@ const handleClick = (e) => {
 };
 
 accordionWrapper.addEventListener("click", handleClick);
+// burger menu is clicked
+const burgerMenu = document.querySelector(".burger-bar-wrapper");
+const aside = document.querySelector(".aside");
+const asideOverlay = document.querySelector(".aside-overlay");
+const headerNavContainer = document.getElementById("headerNavContainer");
+const headerNav = document.querySelector(".nav-wrapper");
+
+let isMenuOpen = false;
+
+const openMenu = () => {
+  burgerMenu.children[0].classList.add("burger-menu-1line");
+  burgerMenu.children[1].classList.add("burger-menu-2line");
+  burgerMenu.children[2].classList.add("burger-menu-3line");
+  aside.classList.remove("d-none");
+  aside.style.backgroundColor = "rgb(43, 43, 43)";
+  asideOverlay.classList.remove("d-none");
+  headerNavContainer.style.display = "flex";
+  headerNavContainer.classList.add("nav-container-clicked");
+  headerNav.classList.remove("nav-wrapper");
+  headerNav.classList.add("nav-wrapper-clicked");
+};
+
+const closeMenu = () => {
+  burgerMenu.children[0].classList.remove("burger-menu-1line");
+  burgerMenu.children[1].classList.remove("burger-menu-2line");
+  burgerMenu.children[2].classList.remove("burger-menu-3line");
+  aside.classList.add("d-none");
+  aside.style.backgroundColor = "";
+  asideOverlay.classList.add("d-none");
+  headerNavContainer.style.display = "";
+  headerNavContainer.classList.remove("nav-container-clicked");
+  headerNav.classList.remove("nav-wrapper-clicked");
+  headerNav.classList.add("nav-wrapper");
+};
+
+const disableScroll = () => {
+  document.body.style.overflow = "hidden";
+};
+
+const enableScroll = () => {
+  document.body.style.overflow = "";
+};
+const toggleBurgerMenu = () => {
+  // Toggle the state
+  isMenuOpen = !isMenuOpen;
+
+  if (isMenuOpen) {
+    // If the menu is closed, open it
+    openMenu();
+    disableScroll();
+  } else {
+    // If the menu is open, close it
+    closeMenu();
+    enableScroll();
+  }
+};
+burgerMenu.addEventListener("click", toggleBurgerMenu);

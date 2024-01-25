@@ -1,9 +1,10 @@
 body {
   padding-top: 5.25rem;
+  overflow: scroll;
 }
 
 :root {
-  overflow: scroll;
+
   --dark-gray-bg: rgba(26, 30, 31);
   --light-gray-txt: rgb(244, 244, 244);
   --medium-gray-bg: rgb(43, 43, 43);
