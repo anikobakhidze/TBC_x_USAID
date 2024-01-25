@@ -1,11 +1,75 @@
-// header scroll
+//change header transparancy while scrolling
 const header = document.querySelector(".header-container");
 const handleScroll = () => {
-  window.scrollY > 0
+  window.scrollY > 84
     ? header.classList.add("transparent")
     : header.classList.remove("transparent");
 };
 window.addEventListener("scroll", handleScroll);
+// burger menu appear/disappear while clicking on burger button
+const burgerMenu = document.querySelector(".burger-bar-wrapper");
+const aside = document.querySelector(".aside");
+const asideOverlay = document.querySelector(".aside-overlay");
+const headerNavContainer = document.getElementById("headerNavContainer");
+const headerNav = document.querySelector(".nav-wrapper");
+
+let isMenuOpen = false;
+//  reusable function for toggling classes
+const toogleClasslist = (name, classes) => {
+  name.classList.toggle(classes);
+};
+const toggleMenu = () => {
+  isMenuOpen = !isMenuOpen;
+
+  const burgerMenuChildren = burgerMenu.children;
+  const classesToAdd = [
+    "burger-menu-1line",
+    "burger-menu-2line",
+    "burger-menu-3line",
+  ];
+  const classesToRemove = ["d-none", "nav-wrapper", "nav-wrapper-clicked"];
+
+  for (let i = 0; i < burgerMenuChildren.length; i++) {
+    toogleClasslist(burgerMenuChildren[i], classesToAdd[i]);
+    burgerMenuChildren[i].classList.remove(classesToRemove[i]);
+  }
+
+  aside.classList.toggle("d-none");
+  aside.style.backgroundColor = isMenuOpen ? "rgb(43, 43, 43)" : "";
+  toogleClasslist(asideOverlay, "d-none");
+  headerNavContainer.style.display = isMenuOpen ? "flex" : "";
+  toogleClasslist(headerNavContainer, "nav-container-clicked");
+  toogleClasslist(headerNav, "nav-wrapper-clicked");
+  toogleClasslist(headerNav, "nav-wrapper");
+};
+burgerMenu.addEventListener("click", toggleMenu);
+// close aside menu bar
+window.addEventListener("click", (e) => {
+  if (
+    isMenuOpen &&
+    e.target !== aside &&
+    !aside.contains(e.target) &&
+    e.target !== asideOverlay &&
+    !asideOverlay.contains(e.target)
+  ) {
+    toggleMenu();
+  }
+});
+
+// aside section height
+window.onload = () => {
+  const bodyHeight = document.body.scrollHeight;
+  asideOverlay.style.height = bodyHeight - header.style.height + "px";
+};
+// Burger Menu disappears while resizing
+const handleResize = () => {
+  const windowWidth = window.innerWidth;
+  windowWidth > 850 && isMenuOpen
+    ? toggleMenu()
+    : (burgerMenu.style.display = "flex");
+};
+
+window.addEventListener("resize", handleResize);
 
 // partners slider
 const rightArrow = document.getElementById("rightArrow");
@@ -69,7 +133,6 @@ leftArrow.addEventListener(
 
 // leftArrow
 const handleLeftArrow = () => {
-  // clearInterval(intervalId);
   currentIndex =
     (currentIndex - 1 + partnersLists.length) % partnersLists.length;
   showCurrentList();
@@ -90,9 +153,9 @@ const handleClick = (e) => {
       ".query-accordion-answer"
     );
     if (accordionCard === closestAccordionCard) {
-      downArrow.classList.toggle("d-none");
-      upArrow.classList.toggle("d-none");
-      accordionAnswers.classList.toggle("d-none");
+      toogleClasslist(downArrow, "d-none");
+      toogleClasslist(upArrow, "d-none");
+      toogleClasslist(accordionAnswers, "d-none");
     } else {
       downArrow.classList.remove("d-none");
       upArrow.classList.add("d-none");
@@ -102,60 +165,3 @@ const handleClick = (e) => {
 };
 
 accordionWrapper.addEventListener("click", handleClick);
-// burger menu is clicked
-const burgerMenu = document.querySelector(".burger-bar-wrapper");
-const aside = document.querySelector(".aside");
-const asideOverlay = document.querySelector(".aside-overlay");
-const headerNavContainer = document.getElementById("headerNavContainer");
-const headerNav = document.querySelector(".nav-wrapper");
-
-let isMenuOpen = false;
-
-const openMenu = () => {
-  burgerMenu.children[0].classList.add("burger-menu-1line");
-  burgerMenu.children[1].classList.add("burger-menu-2line");
-  burgerMenu.children[2].classList.add("burger-menu-3line");
-  aside.classList.remove("d-none");
-  aside.style.backgroundColor = "rgb(43, 43, 43)";
-  asideOverlay.classList.remove("d-none");
-  headerNavContainer.style.display = "flex";
-  headerNavContainer.classList.add("nav-container-clicked");
-  headerNav.classList.remove("nav-wrapper");
-  headerNav.classList.add("nav-wrapper-clicked");
-};
-
-const closeMenu = () => {
-  burgerMenu.children[0].classList.remove("burger-menu-1line");
-  burgerMenu.children[1].classList.remove("burger-menu-2line");
-  burgerMenu.children[2].classList.remove("burger-menu-3line");
-  aside.classList.add("d-none");
-  aside.style.backgroundColor = "";
-  asideOverlay.classList.add("d-none");
-  headerNavContainer.style.display = "";
-  headerNavContainer.classList.remove("nav-container-clicked");
-  headerNav.classList.remove("nav-wrapper-clicked");
-  headerNav.classList.add("nav-wrapper");
-};
-
-const disableScroll = () => {
-  document.body.style.overflow = "hidden";
-};
-
-const enableScroll = () => {
-  document.body.style.overflow = "";
-};
-const toggleBurgerMenu = () => {
-  // Toggle the state
-  isMenuOpen = !isMenuOpen;
-
-  if (isMenuOpen) {
-    // If the menu is closed, open it
-    openMenu();
-    disableScroll();
-  } else {
-    // If the menu is open, close it
-    closeMenu();
-    enableScroll();
-  }
-};
-burgerMenu.addEventListener("click", toggleBurgerMenu);
