@@ -62,13 +62,16 @@ const handleDotSlider = (e) => {
   const currentDot = e.target.closest("li");
   if (!currentDot) return;
   dotSlider.forEach((slider, index) => {
-    const isCurrentDot = slider === currentDot;
-    partnersLists[index].classList.toggle("d-none", !isCurrentDot);
-    currentDot.classList.toggle("dot-selected", isCurrentDot);
-    slider.classList.toggle("dot-selected", isCurrentDot);
+    if (slider === currentDot) {
+      if (partnersLists[index].classList.contains("d-none"))
+        partnersLists[index].classList.remove("d-none");
+      currentDot.classList.add("dot-selected");
+    } else {
+      partnersLists[index].classList.add("d-none");
+      slider.classList.remove("dot-selected");
+    }
   });
 };
-
 dotContainer.addEventListener("click", handleDotSlider);
 
 // Accordion card
