@@ -113,9 +113,7 @@ const toggleMenu = () => {
   for (let i = 0; i < burgerMenuChildren.length; i++) {
     toggleClass(burgerMenuChildren[i], classesToAdd[i], isBurgerMenuOpen);
   }
-  isBurgerMenuOpen
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "");
+  toggleClass(document.body, "no-scroll", isBurgerMenuOpen);
   toggleClass(menuAside, "d-none", !isBurgerMenuOpen);
   menuAside.style.backgroundColor = isBurgerMenuOpen ? "rgb(43, 43, 43)" : "";
   toggleClass(menuOverlay, "d-none", !isBurgerMenuOpen);
