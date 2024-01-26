@@ -1,9 +1,9 @@
+import { toggleClass } from "./utils/toggleClass.js";
 //change header transparancy while scrolling
 const header = document.querySelector(".header-container");
+const thresholdY = 84;
 const handleScroll = () => {
-  window.scrollY > 84
-    ? header.classList.add("transparent")
-    : header.classList.remove("transparent");
+  toggleClass(header, "transparent", window.scrollY > thresholdY);
 };
 window.addEventListener("scroll", handleScroll);
 
@@ -16,23 +16,18 @@ let currentIndex = 0;
 
 const showCurrentList = () => {
   partnersLists.forEach((partnerList, index) => {
-    if (index === currentIndex) {
-      partnerList.classList.remove("d-none");
-      if (dotSlider[index]) {
-        dotSlider[index].classList.add("dot-selected");
-      }
-    } else {
-      partnerList.classList.add("d-none");
-      if (dotSlider[index]) {
-        dotSlider[index].classList.remove("dot-selected");
-      }
+    const isSelected = index === currentIndex;
+    toggleClass(partnerList, "d-none", !isSelected);
+    if (dotSlider[index]) {
+      toggleClass(dotSlider[index], "dot-selected", isSelected);
     }
   });
 };
 
 const handleArrow = (direction) => {
+  const arrowDirection = direction === "right";
   currentIndex =
-    (direction === "right"
+    (arrowDirection
       ? currentIndex + 1
       : currentIndex - 1 + partnersLists.length) % partnersLists.length;
   showCurrentList();
@@ -62,14 +57,9 @@ const handleDotSlider = (e) => {
   const currentDot = e.target.closest("li");
   if (!currentDot) return;
   dotSlider.forEach((slider, index) => {
-    if (slider === currentDot) {
-      if (partnersLists[index].classList.contains("d-none"))
-        partnersLists[index].classList.remove("d-none");
-      currentDot.classList.add("dot-selected");
-    } else {
-      partnersLists[index].classList.add("d-none");
-      slider.classList.remove("dot-selected");
-    }
+    const isCurrent = slider === currentDot;
+    toggleClass(partnersLists[index], "d-none", !isCurrent);
+    toggleClass(slider, "dot-selected", isCurrent);
   });
 };
 dotContainer.addEventListener("click", handleDotSlider);
@@ -80,21 +70,24 @@ const accordionWrapper = document.querySelector(".accordion-div-wrapper");
 const accordionCards = document.querySelectorAll(".accordion-card-li");
 
 const handleClick = (e) => {
-  const closestAccordionCard = e.target.closest("li");
+  const closestAccordionCard = e.target.closest(".accordion-card-li");
+
   accordionCards.forEach((accordionCard) => {
+    const isActive = accordionCard === closestAccordionCard;
     const downArrow = accordionCard.querySelector(".down-arrow");
     const upArrow = accordionCard.querySelector(".up-arrow");
     const accordionAnswers = accordionCard.querySelector(
       ".query-accordion-answer"
     );
-    if (accordionCard === closestAccordionCard) {
-      toogleClasslist(downArrow, "d-none");
-      toogleClasslist(upArrow, "d-none");
-      toogleClasslist(accordionAnswers, "d-none");
+
+    if (isActive && !accordionAnswers.classList.contains("d-none")) {
+      toggleClass(downArrow, "d-none", false);
+      toggleClass(upArrow, "d-none", true);
+      toggleClass(accordionAnswers, "d-none", true);
     } else {
-      downArrow.classList.remove("d-none");
-      upArrow.classList.add("d-none");
-      accordionAnswers.classList.add("d-none");
+      toggleClass(downArrow, "d-none", isActive);
+      toggleClass(upArrow, "d-none", !isActive);
+      toggleClass(accordionAnswers, "d-none", !isActive);
     }
   });
 };
@@ -102,18 +95,14 @@ const handleClick = (e) => {
 accordionWrapper.addEventListener("click", handleClick);
 // burger menu appear/disappear while clicking on burger button
 const burgerMenu = document.querySelector(".burger-bar-wrapper");
-const aside = document.querySelector(".aside");
-const asideOverlay = document.querySelector(".aside-overlay");
-const headerNavContainer = document.getElementById("headerNavContainer");
-const headerNav = document.querySelector(".nav-wrapper");
+const menuAside = document.querySelector(".aside");
+const menuOverlay = document.querySelector(".aside-overlay");
+const navContainer = document.getElementById("headerNavContainer");
+const navigationWrapper = document.querySelector(".nav-wrapper");
 
-let isMenuOpen = false;
-//  reusable function for toggling classes
-const toogleClasslist = (name, classes) => {
-  name.classList.toggle(classes);
-};
+let isBurgerMenuOpen = false;
 const toggleMenu = () => {
-  isMenuOpen = !isMenuOpen;
+  isBurgerMenuOpen = !isBurgerMenuOpen;
 
   const burgerMenuChildren = burgerMenu.children;
   const classesToAdd = [
@@ -121,21 +110,20 @@ const toggleMenu = () => {
     "burger-menu-2line",
     "burger-menu-3line",
   ];
-  const classesToRemove = ["d-none", "nav-wrapper", "nav-wrapper-clicked"];
-
   for (let i = 0; i < burgerMenuChildren.length; i++) {
-    toogleClasslist(burgerMenuChildren[i], classesToAdd[i]);
-    burgerMenuChildren[i].classList.remove(classesToRemove[i]);
+    toggleClass(burgerMenuChildren[i], classesToAdd[i], isBurgerMenuOpen);
   }
-
-  aside.classList.toggle("d-none");
-  aside.style.backgroundColor = isMenuOpen ? "rgb(43, 43, 43)" : "";
-  toogleClasslist(asideOverlay, "d-none");
-  headerNavContainer.style.display = isMenuOpen ? "flex" : "";
-  toogleClasslist(headerNavContainer, "nav-container-clicked");
-  toogleClasslist(headerNav, "nav-wrapper-clicked");
-  toogleClasslist(headerNav, "nav-wrapper");
-  isMenuOpen
+  isBurgerMenuOpen
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "");
+  toggleClass(menuAside, "d-none", !isBurgerMenuOpen);
+  menuAside.style.backgroundColor = isBurgerMenuOpen ? "rgb(43, 43, 43)" : "";
+  toggleClass(menuOverlay, "d-none", !isBurgerMenuOpen);
+  navContainer.style.display = isBurgerMenuOpen ? "flex" : "";
+  toggleClass(navContainer, "nav-container-clicked", isBurgerMenuOpen);
+  toggleClass(navigationWrapper, "nav-wrapper-clicked", isBurgerMenuOpen);
+  toggleClass(navigationWrapper, "nav-wrapper", !isBurgerMenuOpen);
+  isBurgerMenuOpen
     ? clearInterval(intervalId)
     : (intervalId = setInterval(() => handleArrow("right"), 5000));
 };
@@ -143,11 +131,11 @@ burgerMenu.addEventListener("click", toggleMenu);
 // close burger menu bar
 const closeBurgerMenuBar = (e) => {
   if (
-    isMenuOpen &&
-    e.target !== aside &&
-    !aside.contains(e.target) &&
-    e.target !== asideOverlay &&
-    !asideOverlay.contains(e.target)
+    isBurgerMenuOpen &&
+    e.target !== menuAside &&
+    !menuAside.contains(e.target) &&
+    e.target !== menuOverlay &&
+    !menuOverlay.contains(e.target)
   ) {
     toggleMenu();
   }
@@ -157,8 +145,8 @@ window.addEventListener("click", closeBurgerMenuBar);
 // burger menu bar section height
 const updateOverlayHeight = () => {
   const bodyHeight = document.body.scrollHeight;
-  const asideHeight = aside.offsetHeight;
-  asideOverlay.style.height = bodyHeight - asideHeight + "px";
+  const asideHeight = menuAside.offsetHeight;
+  menuOverlay.style.height = bodyHeight - asideHeight + "px";
 };
 
 window.onload = () => {
@@ -170,7 +158,8 @@ window.onload = () => {
 // Burger Menu disappears while resizing
 const handleResize = () => {
   const windowWidth = window.innerWidth;
-  windowWidth > 850 && isMenuOpen
+  const windowWidthSize = 850;
+  windowWidth > windowWidthSize && isBurgerMenuOpen
     ? toggleMenu()
     : (burgerMenu.style.display = "flex");
 };
