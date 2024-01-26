@@ -134,7 +134,7 @@ const toggleMenu = () => {
   toogleClasslist(headerNav, "nav-wrapper");
   isMenuOpen
     ? clearInterval(intervalId)
-    : (intervalId = setInterval(handleArrow("right"), 5000));
+    : (intervalId = setInterval(() => handleArrow("right"), 5000));
 };
 burgerMenu.addEventListener("click", toggleMenu);
 // close burger menu bar
