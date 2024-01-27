@@ -3,77 +3,75 @@
     max-width: 90%;
   }
 
-  /* about section */
-  .about-wrapper h1 {
+  /* description section */
+  .description-content-wrapper h1 {
     font-size: 26px;
   }
 
   /* courses section */
-  .courses-inner-wrapper {
+  .courses-content-wrapper {
     width: 80%;
   }
 
-  .card-wrapper {
+  .course-card {
     max-width: 330px;
   }
 
-  .card-wrapper>div>div {
+  .course-card > div > div {
     margin-top: 3rem;
   }
 
   /* partners section */
-  .partners-slider-wrapper {
+  .partners-slider {
     justify-content: center;
   }
 
-  .partners-arrow-wrapper {
+  .slider-arrow {
     display: none;
   }
 
   /* partners section */
-  .partners-section-container {
+  .partners-section {
     padding-bottom: 4rem;
   }
 
-  .partners-list-wrapper {
+  .partner-logos {
     flex-direction: column;
     height: 260px;
     row-gap: 30px;
   }
 
-  .partners-slider-wrapper {
+  .partners-slider {
     margin-top: 40px;
   }
 
   /* accordion section */
-  .accordion-div-wrapper {
+  .accordion-content-wrapper {
     margin: 0 auto;
-
   }
 
-  .accordion-div-wrapper h4 {
+  .accordion-content-wrapper h4 {
     grid-area: 1 / span 2;
   }
 
-  .accordion-title-wrapper {
+  .accordion-title {
     grid-area: 1;
   }
 
-  .accordion-div-wrapper>span {
+  .accordion-content-wrapper > span {
     grid-area: 3/1;
     text-align: start;
   }
 }
 
 @media screen and (max-width: 850px) {
-
   /* shared */
   .width {
     max-width: 80%;
   }
 
   .section-heading,
-  .accordion-div-wrapper h4 {
+  .accordion-content-wrapper h4 {
     font-size: 20px;
   }
 
@@ -82,50 +80,50 @@
   }
 
   /* header */
-  .header-wrapper nav {
+  .header-content-wrapper nav {
     display: none;
   }
 
-  .aside,
-  .burger-bar-wrapper {
+  .sidebar-menu,
+  .burger-menu-icon {
     display: flex;
   }
 
-  /* intro section */
-  .intro-heading-wrapper h2 {
+  /* title section */
+  .title-content-wrapper h2 {
     font-size: 36px;
   }
 
-  .intro-heading-wrapper h3 {
+  .title-content-wrapper h3 {
     font-size: 30px;
   }
 
-  /* about section */
-  .about-wrapper h1 {
+  /* description section */
+  .description-content-wrapper h1 {
     font-size: 23px;
     margin-bottom: 1.7rem;
   }
 
   /* courses section */
-  .card-wrapper {
+  .course-card {
     max-width: 300px;
   }
 
-  .courses-inner-wrapper h4 {
+  .courses-content-wrapper h4 {
     margin-bottom: 2rem;
   }
 
   /* partners section */
-  .partners-section-container {
+  .partners-section {
     padding-bottom: 2rem;
   }
 
-  .partners-section-container h4 {
+  .partners-section h4 {
     margin-bottom: 0px;
   }
 
   /* accordion section */
-  .accordion-section-container {
+  .accordion-section {
     padding-top: 0px;
     padding-bottom: 0px;
   }
@@ -134,7 +132,7 @@
     padding: 1.3rem 0;
   }
 
-  .accordion-cards-container li>div h3 {
+  .accordion-cards-container li > div h3 {
     font-size: 16px;
   }
 
@@ -150,38 +148,36 @@
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 770px) {
   body {
     padding-top: 4rem;
   }
 
   /* header */
-  .header-container {
+  .site-header {
     height: 4rem;
   }
-
-
 
   .header-logo-wrapper img {
     width: 80%;
   }
 
-  /* intro section */
-  .intro-heading-wrapper h2 {
+  /* title section */
+  .title-content-wrapper h2 {
     font-size: 30px;
   }
 
-  .intro-heading-wrapper h3 {
+  .title-content-wrapper h3 {
     font-size: 27px;
   }
 
-  /* about section */
-  .about-wrapper h1 {
+  /* description section */
+  .description-content-wrapper h1 {
     font-size: 19px;
   }
 
   /* courses section */
-  .courses-section-container {
+  .courses-section {
     padding-top: 1.5rem;
   }
 
@@ -189,16 +185,16 @@
     justify-content: center;
   }
 
-  .card-wrapper {
+  .course-card {
     max-width: 80%;
     min-width: 300px;
   }
 
-  .card-wrapper>div h5 {
+  .course-card > div h5 {
     height: 30px;
   }
 
-  .card-wrapper>div>div {
+  .course-card > div > div {
     margin-top: 2rem;
   }
 
@@ -231,42 +227,41 @@
 }
 
 @media screen and (max-width: 530px) {
-
   /* shared css */
   .section-heading {
     font-size: 18px;
   }
 
-  /* intro section */
-  .intro-heading-wrapper h2 {
+  /* title section */
+  .title-content-wrapper h2 {
     font-size: 23px;
   }
 
-  .intro-heading-wrapper h3 {
+  .title-content-wrapper h3 {
     font-size: 20px;
   }
 
-  /* about section */
-  .about-wrapper {
+  /* description section */
+  .description-content-wrapper {
     padding: 30px 0;
   }
 
-  .about-wrapper h1,
+  .description-content-wrapper h1,
   .additional-info-btn {
     font-size: 16px;
   }
 
   /* accordion */
 
-  .accordion-div-wrapper {
-    padding: 1.87rem 0rem
+  .accordion-content-wrapper {
+    padding: 1.87rem 0rem;
   }
 
-  .accordion-div-wrapper h4 {
+  .accordion-content-wrapper h4 {
     font-size: 17px;
   }
 
-  .accordion-cards-container li>div h3 {
+  .accordion-cards-container li > div h3 {
     font-size: 14px;
     padding: 1rem 0;
   }

@@ -4,7 +4,6 @@ body {
 }
 
 :root {
-
   --dark-gray-bg: rgba(26, 30, 31);
   --light-gray-txt: rgb(244, 244, 244);
   --medium-gray-bg: rgb(43, 43, 43);
@@ -32,7 +31,7 @@ body {
   display: none;
 }
 
-/* about and questions section */
+/* description and accordion section */
 .additional-info-btn {
   color: var(--blue-color);
   font-size: 20px;

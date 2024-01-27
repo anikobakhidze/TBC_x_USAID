@@ -1,6 +1,6 @@
 import { toggleClass } from "./utils/toggleClass.js";
 //change header transparancy while scrolling
-const header = document.querySelector(".header-container");
+const header = document.querySelector(".site-header");
 const thresholdY = 84;
 const handleScroll = () => {
   toggleClass(header, "transparent", window.scrollY > thresholdY);
@@ -10,16 +10,16 @@ window.addEventListener("scroll", handleScroll);
 // partners slider
 const rightArrow = document.getElementById("rightArrow");
 const leftArrow = document.getElementById("leftArrow");
-const partnersLists = document.querySelectorAll(".partners-list-wrapper");
-const dotSlider = document.querySelectorAll(".dot");
+const partnersLists = document.querySelectorAll(".partner-logos");
+const indicatorSlider = document.querySelectorAll(".indicator");
 let currentIndex = 0;
 
 const showCurrentList = () => {
   partnersLists.forEach((partnerList, index) => {
     const isSelected = index === currentIndex;
     toggleClass(partnerList, "d-none", !isSelected);
-    if (dotSlider[index]) {
-      toggleClass(dotSlider[index], "dot-selected", isSelected);
+    if (indicatorSlider[index]) {
+      toggleClass(indicatorSlider[index], "indicator-selected", isSelected);
     }
   });
 };
@@ -50,23 +50,23 @@ rightArrow.addEventListener("mouseleave", handleMouseLeave);
 leftArrow.addEventListener("mouseenter", handleMouseEnter);
 leftArrow.addEventListener("mouseleave", handleMouseLeave);
 
-// Dot slider logic
-const dotContainer = document.querySelector(".slider-dots-container");
+// indicator slider logic
+const indicatorContainer = document.querySelector(".slider-indicators");
 
-const handleDotSlider = (e) => {
-  const currentDot = e.target.closest("li");
-  if (!currentDot) return;
-  dotSlider.forEach((slider, index) => {
-    const isCurrent = slider === currentDot;
+const handleindicatorSlider = (e) => {
+  const currentindicator = e.target.closest("li");
+  if (!currentindicator) return;
+  indicatorSlider.forEach((slider, index) => {
+    const isCurrent = slider === currentindicator;
     toggleClass(partnersLists[index], "d-none", !isCurrent);
-    toggleClass(slider, "dot-selected", isCurrent);
+    toggleClass(slider, "indicator-selected", isCurrent);
   });
 };
-dotContainer.addEventListener("click", handleDotSlider);
+indicatorContainer.addEventListener("click", handleindicatorSlider);
 
 // Accordion card
 
-const accordionWrapper = document.querySelector(".accordion-div-wrapper");
+const accordionWrapper = document.querySelector(".accordion-content-wrapper");
 const accordionCards = document.querySelectorAll(".accordion-card-li");
 
 const handleClick = (e) => {
@@ -94,11 +94,11 @@ const handleClick = (e) => {
 
 accordionWrapper.addEventListener("click", handleClick);
 // burger menu appear/disappear while clicking on burger button
-const burgerMenu = document.querySelector(".burger-bar-wrapper");
-const menuAside = document.querySelector(".aside");
-const menuOverlay = document.querySelector(".aside-overlay");
+const burgerMenu = document.querySelector(".burger-menu-icon");
+const menuAside = document.querySelector(".sidebar-menu");
+const menuOverlay = document.querySelector(".menu-bar-overlay");
 const navContainer = document.getElementById("headerNavContainer");
-const navigationWrapper = document.querySelector(".nav-wrapper");
+const navContentWrapper = document.querySelector(".nav-content-wrapper");
 
 let isBurgerMenuOpen = false;
 const toggleMenu = () => {
@@ -118,9 +118,9 @@ const toggleMenu = () => {
   menuAside.style.backgroundColor = isBurgerMenuOpen ? "rgb(43, 43, 43)" : "";
   toggleClass(menuOverlay, "d-none", !isBurgerMenuOpen);
   navContainer.style.display = isBurgerMenuOpen ? "flex" : "";
-  toggleClass(navContainer, "nav-container-clicked", isBurgerMenuOpen);
-  toggleClass(navigationWrapper, "nav-wrapper-clicked", isBurgerMenuOpen);
-  toggleClass(navigationWrapper, "nav-wrapper", !isBurgerMenuOpen);
+  toggleClass(navContainer, "burger-activated-nav", isBurgerMenuOpen);
+  toggleClass(navContentWrapper, "burger-nav-content", isBurgerMenuOpen);
+  toggleClass(navContentWrapper, "nav-content-wrapper", !isBurgerMenuOpen);
   isBurgerMenuOpen
     ? clearInterval(intervalId)
     : (intervalId = setInterval(() => handleArrow("right"), 5000));

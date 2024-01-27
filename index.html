@@ -13,16 +13,16 @@
   </head>
   <body>
     <!-- header -->
-    <div class="d-none aside-overlay"></div>
-    <header class="d-flex header-container">
-      <div class="d-flex width header-wrapper">
+    <div class="d-none menu-bar-overlay"></div>
+    <header class="d-flex site-header">
+      <div class="d-flex width header-content-wrapper">
         <div class="header-logo-wrapper">
           <a href="#"
             ><img src="./images/logoes/header_logo.svg" alt="TBC x Usaid logo"
           /></a>
         </div>
         <nav id="headerNavContainer">
-          <ul class="nav-wrapper d-flex">
+          <ul class="nav-content-wrapper d-flex">
             <li><a href="#">მთავარი</a></li>
             <li><a href="#">TBC IT</a></li>
             <li><a href="#" class="active">TBC x USAID</a></li>
@@ -30,8 +30,8 @@
           </ul>
         </nav>
 
-        <aside class="d-none aside">
-          <div class="burger-bar-wrapper">
+        <aside class="d-none sidebar-menu">
+          <div class="burger-menu-icon d-flex">
             <div></div>
             <div></div>
             <div></div>
@@ -40,16 +40,16 @@
       </div>
     </header>
     <main>
-      <!-- intro section -->
-      <section class="intro-section-container d-flex">
-        <div class="width intro-heading-wrapper">
+      <!-- title section -->
+      <section class="title-section d-flex">
+        <div class="width title-content-wrapper">
           <h2>TBC x USAID</h2>
           <h3>ᲢᲔᲥᲜᲝᲚᲝᲒᲘᲣᲠᲘ ᲒᲐᲜᲐᲗᲚᲔᲑᲘᲡᲗᲕᲘᲡ</h3>
         </div>
       </section>
-      <!-- about section -->
-      <section class="about-section-container">
-        <div class="width about-wrapper">
+      <!-- description section -->
+      <section class="description-section">
+        <div class="width description-content-wrapper">
           <h1>
             „ TBC x USAID - ტექნოლოგიური განათლებისთვის “ პროგრამა საინფორმაციო
             ტექნოლოგიებით დაინტერესებულ ადამიანებს გთავაზობთ სრულად დაფინანსებულ
@@ -61,11 +61,11 @@
         </div>
       </section>
       <!-- courses section -->
-      <section class="courses-section-container">
-        <div class="courses-inner-wrapper width d-flex">
+      <section class="courses-section">
+        <div class="courses-content-wrapper width d-flex">
           <h4 class="section-heading">სასწავლო კურსები</h4>
           <div class="courses-cards-container d-flex">
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/ios.jpg" alt="ipad" />
 
               <div>
@@ -79,7 +79,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/react.jpg" alt="react logo" />
               <div>
                 <h5>React</h5>
@@ -92,7 +92,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/intro_python.jpg" alt="python logo" />
 
               <div>
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/advanced_python.jpg" alt="python logo" />
 
               <div>
@@ -120,7 +120,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/cybersecurity.jpg" alt="keyboard" />
 
               <div>
@@ -134,7 +134,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img
                 src="images/courses/tot.jpg"
                 alt="Trainer and participants"
@@ -151,7 +151,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/blockchain.jpg" alt="blockchain" />
 
               <div>
@@ -165,7 +165,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/devops.jpg" alt="plan" />
 
               <div>
@@ -179,7 +179,7 @@
                 </div>
               </div>
             </div>
-            <div class="card-wrapper">
+            <div class="course-card">
               <img src="images/courses/info_security.jpg" alt="" />
               <div>
                 <h5>Information Security Governance</h5>
@@ -196,13 +196,13 @@
         </div>
       </section>
       <!-- partners section -->
-      <section class="d-flex partners-section-container">
+      <section class="d-flex partners-section">
         <h4 class="width section-heading">პროექტის პარტნიორები</h4>
-        <div class="d-flex partners-slider-wrapper">
-          <div class="partners-arrow-wrapper" id="leftArrow">
+        <div class="d-flex partners-slider">
+          <div class="slider-arrow" id="leftArrow">
             <img src="images/arrows/left_arrow.svg" alt="left arrow" />
           </div>
-          <div class="d-flex width partners-list-wrapper">
+          <div class="d-flex width partner-logos">
             <img
               src="images/partners/usaid.png"
               alt="USAID logo"
@@ -222,7 +222,7 @@
               height="45"
             />
           </div>
-          <div class="d-none d-flex width partners-list-wrapper">
+          <div class="d-none d-flex width partner-logos">
             <img
               src="images/partners/tegeta.png"
               alt="Tegeta logo"
@@ -242,7 +242,7 @@
               height="95"
             />
           </div>
-          <div class="d-none d-flex width partners-list-wrapper ufc-partner">
+          <div class="d-none d-flex width partner-logos ufc-partner">
             <img
               src="images/partners/UFC.png"
               alt="UFC logo"
@@ -250,26 +250,26 @@
               height="64"
             />
           </div>
-          <div class="partners-arrow-wrapper" id="rightArrow">
+          <div class="slider-arrow" id="rightArrow">
             <img src="images/arrows/right_arrow.svg" alt="right arrow" />
           </div>
         </div>
-        <nav class="slider-nav">
-          <ul class="slider-dots-container d-flex">
-            <li class="dot dot-selected"></li>
-            <li class="dot"></li>
-            <li class="dot"></li>
+        <nav class="partners-indicators-navigation">
+          <ul class="slider-indicators d-flex">
+            <li class="indicator indicator-selected"></li>
+            <li class="indicator"></li>
+            <li class="indicator"></li>
           </ul>
         </nav>
       </section>
       <!-- accordion section -->
-      <section class="accordion-section-container">
-        <div class="accordion-div-wrapper width">
-          <h4 class="accordion-title-wrapper">ხშირად დასმული კითხვები</h4>
+      <section class="accordion-section">
+        <div class="accordion-content-wrapper width">
+          <h4 class="accordion-title">ხშირად დასმული კითხვები</h4>
           <span class="additional-info-btn"><a href="#">ყველა კითხვა</a></span>
           <ul class="accordion-cards-container">
             <li class="accordion-card-li">
-              <div class="accordion-cards-container d-flex">
+              <div class="d-flex">
                 <h3>როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?</h3>
                 <div>
                   <img
