@@ -138,7 +138,7 @@
 
 /* title section */
 .title-section {
-  background: url("../images/intro_wallpaper.jpg") center/cover no-repeat;
+  background: url("../images/title_wallpaper.jpg") center/cover no-repeat;
   min-height: 352px;
   justify-content: center;
 }

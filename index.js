@@ -33,14 +33,14 @@ const handleArrow = (direction) => {
   showCurrentList();
 };
 
-// Arrow event listeners
+// arrow event listeners
 rightArrow.addEventListener("click", () => handleArrow("right"));
 leftArrow.addEventListener("click", () => handleArrow("left"));
 
-// Automatic scroll
+// automatic scroll
 let intervalId = setInterval(() => handleArrow("right"), 5000);
 
-// Mouse enter/leave event listeners
+// mouse enter/leave event listeners
 const handleMouseEnter = () => clearInterval(intervalId);
 const handleMouseLeave = () =>
   (intervalId = setInterval(() => handleArrow("right"), 5000));
@@ -64,7 +64,7 @@ const handleindicatorSlider = (e) => {
 };
 indicatorContainer.addEventListener("click", handleindicatorSlider);
 
-// Accordion card
+// accordion card lists open or closes while they are clicked
 
 const accordionWrapper = document.querySelector(".accordion-content-wrapper");
 const accordionCards = document.querySelectorAll(".accordion-card-li");
@@ -149,11 +149,11 @@ const updateOverlayHeight = () => {
 
 window.onload = () => {
   updateOverlayHeight();
-  // Update overlay height on window scroll
+  // update overlay height on window scroll
   window.addEventListener("scroll", updateOverlayHeight);
 };
 
-// Burger Menu disappears while resizing
+// burger Menu disappears while resizing
 const handleResize = () => {
   const windowWidth = window.innerWidth;
   const windowWidthSize = 850;
